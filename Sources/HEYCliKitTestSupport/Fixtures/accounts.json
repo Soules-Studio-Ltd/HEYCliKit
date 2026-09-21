@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "id": "all",
+      "name": "All Accounts",
+      "active": true
+    },
+    {
+      "id": "123456",
+      "name": "Test User",
+      "email": "test@example.com",
+      "purpose": "home",
+      "status": "active",
+      "active": false
+    }
+  ],
+  "summary": "2 mail account filters"
+}

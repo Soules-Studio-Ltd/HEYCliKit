@@ -1,0 +1,97 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "app_url": "https://app.hey.com/imbox",
+      "id": 100001,
+      "kind": "imbox",
+      "name": "Imbox",
+      "posting_changes_url": "https://app.hey.com/boxes/100001/postings/changes.json?since=TIMESTAMP&v=2",
+      "signed_stream_name": "REDACTED",
+      "updates_channels": [
+        {
+          "signed_stream_name": "REDACTED"
+        }
+      ],
+      "url": "https://app.hey.com/imbox.json"
+    },
+    {
+      "app_url": "https://app.hey.com/feedbox",
+      "id": 100003,
+      "kind": "feedbox",
+      "name": "The Feed",
+      "posting_changes_url": "https://app.hey.com/boxes/100003/postings/changes.json?since=TIMESTAMP&v=2",
+      "signed_stream_name": "REDACTED",
+      "updates_channels": [
+        {
+          "signed_stream_name": "REDACTED"
+        }
+      ],
+      "url": "https://app.hey.com/feedbox.json"
+    },
+    {
+      "app_url": "https://app.hey.com/set_aside",
+      "id": 100005,
+      "kind": "asidebox",
+      "name": "Set Aside",
+      "posting_changes_url": "https://app.hey.com/boxes/100005/postings/changes.json?since=TIMESTAMP&v=2",
+      "signed_stream_name": "REDACTED",
+      "updates_channels": [
+        {
+          "signed_stream_name": "REDACTED"
+        }
+      ],
+      "url": "https://app.hey.com/set_aside.json"
+    },
+    {
+      "app_url": "https://app.hey.com/reply_later",
+      "id": 100007,
+      "kind": "laterbox",
+      "name": "Reply Later",
+      "posting_changes_url": "https://app.hey.com/boxes/100007/postings/changes.json?since=TIMESTAMP&v=2",
+      "signed_stream_name": "REDACTED",
+      "updates_channels": [
+        {
+          "signed_stream_name": "REDACTED"
+        }
+      ],
+      "url": "https://app.hey.com/reply_later.json"
+    },
+    {
+      "app_url": "https://app.hey.com/paper_trail",
+      "id": 100009,
+      "kind": "trailbox",
+      "name": "Paper Trail",
+      "posting_changes_url": "https://app.hey.com/boxes/100009/postings/changes.json?since=TIMESTAMP&v=2",
+      "signed_stream_name": "REDACTED",
+      "updates_channels": [
+        {
+          "signed_stream_name": "REDACTED"
+        }
+      ],
+      "url": "https://app.hey.com/paper_trail.json"
+    },
+    {
+      "app_url": "https://app.hey.com/bubble_up",
+      "id": 100011,
+      "kind": "bubblebox",
+      "name": "Bubble Up",
+      "posting_changes_url": "https://app.hey.com/boxes/100011/postings/changes.json?since=TIMESTAMP&v=2",
+      "signed_stream_name": "REDACTED",
+      "updates_channels": [
+        {
+          "signed_stream_name": "REDACTED"
+        }
+      ],
+      "url": "https://app.hey.com/bubble_up.json"
+    }
+  ],
+  "summary": "6 mailboxes",
+  "breadcrumbs": [
+    {
+      "action": "view",
+      "command": "hey box view <name>",
+      "description": "View email threads in a box"
+    }
+  ]
+}

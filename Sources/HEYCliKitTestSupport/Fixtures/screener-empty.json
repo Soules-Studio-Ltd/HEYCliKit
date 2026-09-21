@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "data": [],
+  "summary": "0 senders waiting",
+  "breadcrumbs": [
+    {
+      "action": "approve",
+      "command": "hey screener approve <id>",
+      "description": "Let a sender through"
+    },
+    {
+      "action": "deny",
+      "command": "hey screener deny <id>",
+      "description": "Turn a sender away"
+    }
+  ],
+  "meta": {
+    "pages_fetched": 1,
+    "total_count": 0
+  }
+}

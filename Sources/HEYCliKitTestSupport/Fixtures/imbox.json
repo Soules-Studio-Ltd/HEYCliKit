@@ -1,0 +1,3472 @@
+{
+  "ok": true,
+  "data": {
+    "app_url": "https://app.hey.com/imbox",
+    "id": 100001,
+    "kind": "imbox",
+    "name": "Imbox",
+    "next_history_url": "https://app.hey.com/imbox.json?page=eyJwYWdlX251bWJlciI6NCwidmFsdWVzIjp7InNlZW4iOiJzZWVuIiwib2JzZXJ2ZWRfYXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMDAwMFoiLCJpZCI6MTAwMTMwfX0",
+    "next_incremental_sync_url": "https://app.hey.com/imbox.json?updated_since=TIMESTAMP",
+    "posting_changes_url": "https://app.hey.com/boxes/100001/postings/changes.json?since=TIMESTAMP&v=2",
+    "signed_stream_name": "REDACTED",
+    "updates_channels": [
+      {
+        "signed_stream_name": "REDACTED"
+      }
+    ],
+    "url": "https://app.hey.com/imbox.json",
+    "postings": [
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-03T21:40:14Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100005",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#CFF523",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test2@example.com",
+            "id": 100006,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2026-09-03T21:40:15Z"
+          }
+        ],
+        "created_at": "2026-09-03T21:40:15.799878Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#CFF523",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test2@example.com",
+          "id": 100006,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2026-09-03T21:40:15Z"
+        },
+        "entry_kind": "message",
+        "id": 100007,
+        "kind": "topic",
+        "name": "Test subject 1",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-03T21:40:15.793452Z",
+        "summary": "Test summary 1",
+        "updated_at": "2026-09-03T21:40:15.799878Z",
+        "visible_entry_count": 1,
+        "topic_id": 100005
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-03T21:37:18Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100008",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "created_at": "2026-09-03T21:37:20.65607Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#06D004",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test3@example.com",
+          "id": 100009,
+          "initials": "TC",
+          "name": "Test contact 1",
+          "updated_at": "2023-11-27T07:40:48Z"
+        },
+        "entry_kind": "message",
+        "id": 100010,
+        "kind": "topic",
+        "name": "Test subject 2",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-03T21:37:20.647744Z",
+        "summary": "Test summary 2",
+        "updated_at": "2026-09-03T21:37:20.65607Z",
+        "visible_entry_count": 1,
+        "topic_id": 100008
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-03T21:36:50Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100011",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "created_at": "2026-09-03T21:36:51.616792Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#06D004",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test3@example.com",
+          "id": 100009,
+          "initials": "TC",
+          "name": "Test contact 1",
+          "updated_at": "2023-11-27T07:40:48Z"
+        },
+        "entry_kind": "message",
+        "id": 100012,
+        "kind": "topic",
+        "name": "Test subject 3",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-03T21:36:51.610106Z",
+        "summary": "Test summary 3",
+        "updated_at": "2026-09-03T21:36:51.616792Z",
+        "visible_entry_count": 1,
+        "topic_id": 100011
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-01T18:23:31Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#7CE9FB",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test4@example.com",
+            "id": 100013,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2026-08-17T19:24:55Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100014",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#7CE9FB",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test4@example.com",
+            "id": 100013,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2026-08-17T19:24:55Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#F5A623",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test5@example.com",
+            "id": 100015,
+            "initials": "TC",
+            "name": "Test contact 3",
+            "updated_at": "2026-08-15T22:32:24Z"
+          }
+        ],
+        "created_at": "2026-09-01T18:23:32.193073Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#F5A623",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test5@example.com",
+          "id": 100015,
+          "initials": "TC",
+          "name": "Test contact 3",
+          "updated_at": "2026-08-15T22:32:24Z"
+        },
+        "entry_kind": "message",
+        "id": 100016,
+        "kind": "topic",
+        "name": "Test subject 4",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-01T19:54:49.787322Z",
+        "summary": "Test summary 4",
+        "updated_at": "2026-09-01T19:54:49.796168Z",
+        "visible_entry_count": 1,
+        "topic_id": 100014
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-03T21:36:01Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100017",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-09-03T21:36:01.884602Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100019,
+        "kind": "topic",
+        "name": "Test subject 5",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-03T21:40:59.052879Z",
+        "seen": true,
+        "summary": "Test summary 5",
+        "updated_at": "2026-09-03T21:40:59.061179Z",
+        "visible_entry_count": 1,
+        "topic_id": 100017
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-03T11:26:56Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100020",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#F87917",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test7@example.com",
+            "id": 100021,
+            "initials": "TC",
+            "name": "Test contact 4",
+            "updated_at": "2026-09-03T21:39:03Z"
+          }
+        ],
+        "created_at": "2026-09-03T21:39:02.998892Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#F87917",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test7@example.com",
+          "id": 100021,
+          "initials": "TC",
+          "name": "Test contact 4",
+          "updated_at": "2026-09-03T21:39:03Z"
+        },
+        "entry_kind": "message",
+        "id": 100022,
+        "kind": "topic",
+        "name": "Test subject 6",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-03T21:39:03.171116Z",
+        "seen": true,
+        "summary": "Test summary 6",
+        "updated_at": "2026-09-03T21:39:03.183848Z",
+        "visible_entry_count": 1,
+        "topic_id": 100020
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-03T09:01:08Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100023",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-09-03T09:01:12.780151Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100024,
+        "kind": "topic",
+        "name": "Test subject 7",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-03T18:43:28.551129Z",
+        "seen": true,
+        "summary": "Test summary 7",
+        "updated_at": "2026-09-03T18:43:28.568205Z",
+        "visible_entry_count": 1,
+        "topic_id": 100023
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-03T14:42:05Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100025",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#F5A623",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test8@example.com",
+            "id": 100026,
+            "initials": "TC",
+            "name": "Test contact 5",
+            "updated_at": "2023-11-27T07:40:48Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "created_at": "2026-09-03T14:42:05.785537Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#F5A623",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test8@example.com",
+          "id": 100026,
+          "initials": "TC",
+          "name": "Test contact 5",
+          "updated_at": "2023-11-27T07:40:48Z"
+        },
+        "entry_kind": "announcement",
+        "id": 100027,
+        "kind": "topic",
+        "name": "Test subject 8",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-03T14:42:33.683207Z",
+        "seen": true,
+        "summary": "Test summary 8",
+        "updated_at": "2026-09-03T14:42:33.695251Z",
+        "visible_entry_count": 1,
+        "topic_id": 100025
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-02T12:34:53Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100028",
+        "blocked_trackers": true,
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FF7182",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test9@example.com",
+            "id": 100029,
+            "initials": "TC",
+            "name": "Test contact 6",
+            "updated_at": "2024-06-16T14:49:35Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#7ED321",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test10@example.com",
+            "id": 100030,
+            "initials": "TC",
+            "name": "Test contact 7",
+            "updated_at": "2026-09-02T11:56:02Z"
+          }
+        ],
+        "created_at": "2026-09-02T11:56:02.673093Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FF7182",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test9@example.com",
+          "id": 100029,
+          "initials": "TC",
+          "name": "Test contact 6",
+          "updated_at": "2024-06-16T14:49:35Z"
+        },
+        "entry_kind": "message",
+        "id": 100031,
+        "kind": "topic",
+        "name": "Test subject 9",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-02T12:41:22.277192Z",
+        "seen": true,
+        "summary": "Test summary 9",
+        "updated_at": "2026-09-02T12:41:22.289755Z",
+        "visible_entry_count": 3,
+        "topic_id": 100028
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-02T09:07:46Z",
+        "app_bundle_url": "https://app.hey.com/contacts/100032",
+        "app_url": "https://app.hey.com/contacts/100032",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "created_at": "2026-01-29T23:34:29.761571Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#23B7F5",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test11@example.com",
+          "id": 100032,
+          "initials": "TC",
+          "name": "Test contact 8",
+          "updated_at": "2025-12-01T10:59:34Z"
+        },
+        "id": 100033,
+        "kind": "bundle",
+        "name": "Test subject 10",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-02T11:41:55.364658Z",
+        "seen": true,
+        "updated_at": "2026-09-02T11:41:55.395446Z"
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-01T19:51:16Z",
+        "app_bundle_url": "https://app.hey.com/contacts/100034",
+        "app_url": "https://app.hey.com/contacts/100034",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "created_at": "2026-03-03T22:40:59.779545Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#7ED321",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test12@example.com",
+          "id": 100034,
+          "initials": "TC",
+          "name": "Test contact 9",
+          "updated_at": "2023-11-27T22:06:04Z"
+        },
+        "id": 100035,
+        "kind": "bundle",
+        "name": "Test subject 11",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-01T19:52:45.624185Z",
+        "seen": true,
+        "updated_at": "2026-09-01T19:52:45.656033Z"
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-01T13:08:34Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100036",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-09-01T13:08:34.817648Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100037,
+        "kind": "topic",
+        "name": "Test subject 12",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-01T15:10:15.726546Z",
+        "seen": true,
+        "summary": "Test summary 10",
+        "updated_at": "2026-09-01T15:10:15.733521Z",
+        "visible_entry_count": 1,
+        "topic_id": 100036
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-01T13:06:18Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100038",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-09-01T13:06:19.838368Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100039,
+        "kind": "topic",
+        "name": "Test subject 13",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-01T13:06:47.987093Z",
+        "seen": true,
+        "summary": "Test summary 11",
+        "updated_at": "2026-09-01T13:06:47.995618Z",
+        "visible_entry_count": 1,
+        "topic_id": 100038
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-09-01T12:43:20Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100040",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FF7182",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test13@example.com",
+            "id": 100041,
+            "initials": "TC",
+            "name": "Test contact 10",
+            "updated_at": "2026-05-27T12:53:26Z"
+          }
+        ],
+        "created_at": "2026-09-01T12:43:23.445128Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FF7182",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test13@example.com",
+          "id": 100041,
+          "initials": "TC",
+          "name": "Test contact 10",
+          "updated_at": "2026-05-27T12:53:26Z"
+        },
+        "entry_kind": "message",
+        "id": 100042,
+        "kind": "topic",
+        "name": "Test subject 14",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-09-01T13:01:36.550015Z",
+        "seen": true,
+        "summary": "Test summary 12",
+        "updated_at": "2026-09-01T13:01:36.562421Z",
+        "visible_entry_count": 1,
+        "topic_id": 100040
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-22T01:58:02Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100043",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#50E3C2",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test14@example.com",
+            "id": 100044,
+            "initials": "TC",
+            "name": "Test contact 11",
+            "updated_at": "2025-11-07T13:48:33Z"
+          }
+        ],
+        "created_at": "2026-08-22T01:58:03.839907Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#50E3C2",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test14@example.com",
+          "id": 100044,
+          "initials": "TC",
+          "name": "Test contact 11",
+          "updated_at": "2025-11-07T13:48:33Z"
+        },
+        "entry_kind": "message",
+        "id": 100045,
+        "kind": "topic",
+        "name": "Test subject 15",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-31T07:17:07.705368Z",
+        "seen": true,
+        "summary": "Test summary 13",
+        "updated_at": "2026-08-31T07:17:07.720486Z",
+        "visible_entry_count": 1,
+        "topic_id": 100043
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-28T19:11:04Z",
+        "app_bundle_url": "https://app.hey.com/contacts/100046",
+        "app_url": "https://app.hey.com/contacts/100046",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "created_at": "2024-03-01T09:53:49.605978Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#F87917",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test15@example.com",
+          "id": 100046,
+          "initials": "TC",
+          "name": "Test contact 12",
+          "updated_at": "2024-02-23T08:08:00Z"
+        },
+        "id": 100047,
+        "kind": "bundle",
+        "name": "Test subject 16",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-31T07:17:01.364619Z",
+        "seen": true,
+        "updated_at": "2026-08-31T07:17:01.403013Z"
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-29T04:54:15Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100048",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#50E3C2",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test14@example.com",
+            "id": 100044,
+            "initials": "TC",
+            "name": "Test contact 11",
+            "updated_at": "2025-11-07T13:48:33Z"
+          }
+        ],
+        "created_at": "2026-08-29T04:54:16.641051Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#50E3C2",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test14@example.com",
+          "id": 100044,
+          "initials": "TC",
+          "name": "Test contact 11",
+          "updated_at": "2025-11-07T13:48:33Z"
+        },
+        "entry_kind": "message",
+        "id": 100049,
+        "kind": "topic",
+        "name": "Test subject 17",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-31T07:15:33.227399Z",
+        "seen": true,
+        "summary": "Test summary 14",
+        "updated_at": "2026-08-31T07:15:33.240773Z",
+        "visible_entry_count": 1,
+        "topic_id": 100048
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-28T08:22:39Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100050",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FFCC00",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test16@example.com",
+            "id": 100051,
+            "initials": "TC",
+            "name": "Test contact 13",
+            "updated_at": "2026-07-29T10:14:17Z"
+          }
+        ],
+        "created_at": "2026-08-28T08:22:40.928628Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FFCC00",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test16@example.com",
+          "id": 100051,
+          "initials": "TC",
+          "name": "Test contact 13",
+          "updated_at": "2026-07-29T10:14:17Z"
+        },
+        "entry_kind": "message",
+        "id": 100052,
+        "kind": "topic",
+        "name": "Test subject 18",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-28T08:49:43.754253Z",
+        "seen": true,
+        "summary": "Test summary 15",
+        "updated_at": "2026-08-28T08:49:43.761404Z",
+        "visible_entry_count": 1,
+        "topic_id": 100050
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-26T09:00:48Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100053",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-26T09:00:49.48704Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100054,
+        "kind": "topic",
+        "name": "Test subject 19",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-27T08:24:52.353342Z",
+        "seen": true,
+        "summary": "Test summary 16",
+        "updated_at": "2026-08-27T08:24:52.366888Z",
+        "visible_entry_count": 1,
+        "topic_id": 100053
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-21T12:31:17Z",
+        "app_bundle_url": "https://app.hey.com/contacts/100055",
+        "app_url": "https://app.hey.com/contacts/100055",
+        "blocked_trackers": true,
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "created_at": "2026-04-28T10:23:01.154221Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#F95C5C",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test17@example.com",
+          "id": 100055,
+          "initials": "TC",
+          "name": "Test contact 14",
+          "updated_at": "2023-12-08T11:42:09Z"
+        },
+        "id": 100056,
+        "kind": "bundle",
+        "name": "Test subject 20",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-26T06:25:51.076425Z",
+        "seen": true,
+        "updated_at": "2026-08-26T06:25:51.108258Z"
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-25T23:46:13Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100057",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FF7182",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test13@example.com",
+            "id": 100041,
+            "initials": "TC",
+            "name": "Test contact 10",
+            "updated_at": "2026-05-27T12:53:26Z"
+          }
+        ],
+        "created_at": "2026-08-25T23:46:14.720688Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FF7182",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test13@example.com",
+          "id": 100041,
+          "initials": "TC",
+          "name": "Test contact 10",
+          "updated_at": "2026-05-27T12:53:26Z"
+        },
+        "entry_kind": "message",
+        "id": 100058,
+        "kind": "topic",
+        "name": "Test subject 14",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-26T06:25:41.924697Z",
+        "seen": true,
+        "summary": "Test summary 17",
+        "updated_at": "2026-08-26T06:25:41.937227Z",
+        "visible_entry_count": 1,
+        "topic_id": 100057
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-25T16:02:12Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100059",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FF8A71",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test18@example.com",
+            "id": 100060,
+            "initials": "TC",
+            "name": "Test contact 9",
+            "updated_at": "2024-03-26T12:59:58Z"
+          }
+        ],
+        "created_at": "2026-08-25T16:02:13.554898Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FF8A71",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test18@example.com",
+          "id": 100060,
+          "initials": "TC",
+          "name": "Test contact 9",
+          "updated_at": "2024-03-26T12:59:58Z"
+        },
+        "entry_kind": "message",
+        "id": 100061,
+        "kind": "topic",
+        "name": "Test subject 21",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-25T16:02:40.940492Z",
+        "seen": true,
+        "summary": "Test summary 18",
+        "updated_at": "2026-08-25T16:02:40.952864Z",
+        "visible_entry_count": 1,
+        "topic_id": 100059
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-25T11:15:13Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100062",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FF8A71",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test19@example.com",
+            "id": 100063,
+            "initials": "TC",
+            "name": "Test contact 15",
+            "updated_at": "2026-07-29T13:24:26Z"
+          }
+        ],
+        "created_at": "2026-08-25T11:15:15.294354Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FF8A71",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test19@example.com",
+          "id": 100063,
+          "initials": "TC",
+          "name": "Test contact 15",
+          "updated_at": "2026-07-29T13:24:26Z"
+        },
+        "entry_kind": "message",
+        "id": 100064,
+        "kind": "topic",
+        "name": "Test subject 22",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-25T11:15:24.776068Z",
+        "seen": true,
+        "summary": "Test summary 19",
+        "updated_at": "2026-08-25T11:15:24.789082Z",
+        "visible_entry_count": 1,
+        "topic_id": 100062
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-25T09:16:48Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100065",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#E57CFB",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test20@example.com",
+            "id": 100066,
+            "initials": "TC",
+            "name": "Test contact 16",
+            "updated_at": "2026-08-20T10:53:06Z"
+          }
+        ],
+        "created_at": "2026-08-20T10:53:06.631677Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#E57CFB",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test20@example.com",
+          "id": 100066,
+          "initials": "TC",
+          "name": "Test contact 16",
+          "updated_at": "2026-08-20T10:53:06Z"
+        },
+        "entry_kind": "message",
+        "id": 100067,
+        "kind": "topic",
+        "name": "Test subject 23",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-25T09:22:59.638536Z",
+        "seen": true,
+        "summary": "Test summary 20",
+        "updated_at": "2026-08-25T09:22:59.64455Z",
+        "visible_entry_count": 2,
+        "topic_id": 100065
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-24T13:00:24Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100068",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#F8E71C",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test21@example.com",
+            "id": 100069,
+            "initials": "TC",
+            "name": "Test contact 17",
+            "updated_at": "2025-10-01T09:24:23Z"
+          }
+        ],
+        "created_at": "2026-08-24T13:00:25.715299Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#F8E71C",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test21@example.com",
+          "id": 100069,
+          "initials": "TC",
+          "name": "Test contact 17",
+          "updated_at": "2025-10-01T09:24:23Z"
+        },
+        "entry_kind": "message",
+        "id": 100070,
+        "kind": "topic",
+        "name": "Test subject 24",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-24T14:19:42.664477Z",
+        "seen": true,
+        "summary": "Test summary 21",
+        "updated_at": "2026-08-24T14:19:42.671959Z",
+        "visible_entry_count": 1,
+        "topic_id": 100068
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:18:28Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100071",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:18:28.298468Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#BCFF94",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "User",
+          "email_address": "test1@example.com",
+          "id": 100004,
+          "initials": "TC",
+          "name": "Test contact 1",
+          "updated_at": "2024-01-12T23:38:30Z"
+        },
+        "entry_kind": "message",
+        "id": 100072,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 25",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:18:28.446517Z",
+        "seen": true,
+        "summary": "Test summary 22",
+        "updated_at": "2026-08-23T14:18:28.452672Z",
+        "visible_entry_count": 1,
+        "topic_id": 100071
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:17:38Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100073",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:17:43.855627Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100074,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 26",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:18:26.785772Z",
+        "seen": true,
+        "summary": "Test summary 23",
+        "updated_at": "2026-08-23T14:18:26.798213Z",
+        "visible_entry_count": 1,
+        "topic_id": 100073
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:18:22Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100075",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:18:23.037027Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#BCFF94",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "User",
+          "email_address": "test1@example.com",
+          "id": 100004,
+          "initials": "TC",
+          "name": "Test contact 1",
+          "updated_at": "2024-01-12T23:38:30Z"
+        },
+        "entry_kind": "message",
+        "id": 100076,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 27",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:18:23.205615Z",
+        "seen": true,
+        "summary": "Test summary 24",
+        "updated_at": "2026-08-23T14:18:23.214096Z",
+        "visible_entry_count": 1,
+        "topic_id": 100075
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:17:27Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100077",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:17:28.771551Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100078,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 28",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:18:21.080947Z",
+        "seen": true,
+        "summary": "Test summary 25",
+        "updated_at": "2026-08-23T14:18:21.094492Z",
+        "visible_entry_count": 1,
+        "topic_id": 100077
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:18:17Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100079",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:18:17.523465Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#BCFF94",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "User",
+          "email_address": "test1@example.com",
+          "id": 100004,
+          "initials": "TC",
+          "name": "Test contact 1",
+          "updated_at": "2024-01-12T23:38:30Z"
+        },
+        "entry_kind": "message",
+        "id": 100080,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 29",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:18:17.69129Z",
+        "seen": true,
+        "summary": "Test summary 26",
+        "updated_at": "2026-08-23T14:18:17.698116Z",
+        "visible_entry_count": 1,
+        "topic_id": 100079
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:17:14Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100081",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:17:19.290229Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100082,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 30",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:18:15.431944Z",
+        "seen": true,
+        "summary": "Test summary 27",
+        "updated_at": "2026-08-23T14:18:15.445035Z",
+        "visible_entry_count": 1,
+        "topic_id": 100081
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:18:11Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100083",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:18:11.124538Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#BCFF94",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "User",
+          "email_address": "test1@example.com",
+          "id": 100004,
+          "initials": "TC",
+          "name": "Test contact 1",
+          "updated_at": "2024-01-12T23:38:30Z"
+        },
+        "entry_kind": "message",
+        "id": 100084,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 31",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:18:11.268823Z",
+        "seen": true,
+        "summary": "Test summary 28",
+        "updated_at": "2026-08-23T14:18:11.274673Z",
+        "visible_entry_count": 1,
+        "topic_id": 100083
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:17:08Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100085",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:17:09.736576Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100086,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 32",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:18:09.317556Z",
+        "seen": true,
+        "summary": "Test summary 29",
+        "updated_at": "2026-08-23T14:18:09.330453Z",
+        "visible_entry_count": 1,
+        "topic_id": 100085
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:18:05Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100087",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:18:05.290916Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#BCFF94",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "User",
+          "email_address": "test1@example.com",
+          "id": 100004,
+          "initials": "TC",
+          "name": "Test contact 1",
+          "updated_at": "2024-01-12T23:38:30Z"
+        },
+        "entry_kind": "message",
+        "id": 100088,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 33",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:18:05.477482Z",
+        "seen": true,
+        "summary": "Test summary 30",
+        "updated_at": "2026-08-23T14:18:05.484333Z",
+        "visible_entry_count": 1,
+        "topic_id": 100087
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:16:39Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100089",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:16:40.741478Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100090,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 34",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:18:03.343745Z",
+        "seen": true,
+        "summary": "Test summary 31",
+        "updated_at": "2026-08-23T14:18:03.357686Z",
+        "visible_entry_count": 1,
+        "topic_id": 100089
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:17:59Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100091",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:17:59.12958Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#BCFF94",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "User",
+          "email_address": "test1@example.com",
+          "id": 100004,
+          "initials": "TC",
+          "name": "Test contact 1",
+          "updated_at": "2024-01-12T23:38:30Z"
+        },
+        "entry_kind": "message",
+        "id": 100092,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 35",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:17:59.27588Z",
+        "seen": true,
+        "summary": "Test summary 32",
+        "updated_at": "2026-08-23T14:17:59.281717Z",
+        "visible_entry_count": 1,
+        "topic_id": 100091
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T14:16:28Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100093",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#9C94FF",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test6@example.com",
+            "id": 100018,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2025-10-21T23:35:39Z"
+          }
+        ],
+        "created_at": "2026-08-23T14:16:29.813523Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#9C94FF",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test6@example.com",
+          "id": 100018,
+          "initials": "TC",
+          "name": "Test contact 2",
+          "updated_at": "2025-10-21T23:35:39Z"
+        },
+        "entry_kind": "message",
+        "id": 100094,
+        "includes_attachments": true,
+        "includes_calendar_invites": true,
+        "kind": "topic",
+        "name": "Test subject 36",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T14:17:55.972867Z",
+        "seen": true,
+        "summary": "Test summary 33",
+        "updated_at": "2026-08-23T14:17:55.985391Z",
+        "visible_entry_count": 1,
+        "topic_id": 100093
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T12:12:48Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100095",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#49FFED",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test22@example.com",
+            "id": 100096,
+            "initials": "TC",
+            "name": "Test contact 18",
+            "updated_at": "2026-08-23T12:19:11Z"
+          }
+        ],
+        "created_at": "2026-08-23T12:19:11.039774Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#49FFED",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test22@example.com",
+          "id": 100096,
+          "initials": "TC",
+          "name": "Test contact 18",
+          "updated_at": "2026-08-23T12:19:11Z"
+        },
+        "entry_kind": "message",
+        "id": 100097,
+        "kind": "topic",
+        "name": "Test subject 37",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T12:19:23.192926Z",
+        "seen": true,
+        "summary": "Test summary 34",
+        "updated_at": "2026-08-23T12:19:23.200424Z",
+        "visible_entry_count": 1,
+        "topic_id": 100095
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T12:13:25Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100098",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#7CE9FB",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test23@example.com",
+            "id": 100099,
+            "initials": "TC",
+            "name": "Test contact 18",
+            "updated_at": "2026-08-12T10:10:03Z"
+          }
+        ],
+        "created_at": "2026-08-23T12:13:26.198276Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#7CE9FB",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test23@example.com",
+          "id": 100099,
+          "initials": "TC",
+          "name": "Test contact 18",
+          "updated_at": "2026-08-12T10:10:03Z"
+        },
+        "entry_kind": "message",
+        "id": 100100,
+        "kind": "topic",
+        "name": "Test subject 38",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T12:18:52.938565Z",
+        "seen": true,
+        "summary": "Test summary 35",
+        "updated_at": "2026-08-23T12:18:52.944926Z",
+        "visible_entry_count": 1,
+        "topic_id": 100098
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-23T01:42:54Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100101",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#7ED321",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test24@example.com",
+            "id": 100102,
+            "initials": "TC",
+            "name": "Test contact 19",
+            "updated_at": "2024-07-15T23:35:43Z"
+          }
+        ],
+        "created_at": "2026-08-23T01:42:55.874837Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#7ED321",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test24@example.com",
+          "id": 100102,
+          "initials": "TC",
+          "name": "Test contact 19",
+          "updated_at": "2024-07-15T23:35:43Z"
+        },
+        "entry_kind": "message",
+        "id": 100103,
+        "kind": "topic",
+        "name": "Test subject 39",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-23T01:42:58.327942Z",
+        "seen": true,
+        "summary": "Test summary 36",
+        "updated_at": "2026-08-23T01:42:58.340116Z",
+        "visible_entry_count": 1,
+        "topic_id": 100101
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-21T13:01:23Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100104",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FFCC00",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test16@example.com",
+            "id": 100051,
+            "initials": "TC",
+            "name": "Test contact 13",
+            "updated_at": "2026-07-29T10:14:17Z"
+          }
+        ],
+        "created_at": "2026-08-21T13:01:25.169111Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FFCC00",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test16@example.com",
+          "id": 100051,
+          "initials": "TC",
+          "name": "Test contact 13",
+          "updated_at": "2026-07-29T10:14:17Z"
+        },
+        "entry_kind": "message",
+        "id": 100105,
+        "kind": "topic",
+        "name": "Test subject 40",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-21T13:01:34.462895Z",
+        "seen": true,
+        "summary": "Test summary 37",
+        "updated_at": "2026-08-21T13:01:34.47631Z",
+        "visible_entry_count": 1,
+        "topic_id": 100104
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-21T12:10:05Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100106",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FF8A71",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test19@example.com",
+            "id": 100063,
+            "initials": "TC",
+            "name": "Test contact 15",
+            "updated_at": "2026-07-29T13:24:26Z"
+          }
+        ],
+        "created_at": "2026-08-21T12:10:07.334394Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FF8A71",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test19@example.com",
+          "id": 100063,
+          "initials": "TC",
+          "name": "Test contact 15",
+          "updated_at": "2026-07-29T13:24:26Z"
+        },
+        "entry_kind": "message",
+        "id": 100107,
+        "includes_attachments": true,
+        "kind": "topic",
+        "name": "Test subject 41",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-21T12:10:24.656216Z",
+        "seen": true,
+        "summary": "Test summary 38",
+        "updated_at": "2026-08-21T12:10:24.668071Z",
+        "visible_entry_count": 1,
+        "topic_id": 100106
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-20T10:50:09Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100108",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FF8A71",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test25@example.com",
+            "id": 100109,
+            "initials": "TC",
+            "name": "Test contact 20",
+            "updated_at": "2026-07-28T10:45:08Z"
+          }
+        ],
+        "created_at": "2026-08-20T10:50:12.670474Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FF8A71",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test25@example.com",
+          "id": 100109,
+          "initials": "TC",
+          "name": "Test contact 20",
+          "updated_at": "2026-07-28T10:45:08Z"
+        },
+        "entry_kind": "message",
+        "id": 100110,
+        "kind": "topic",
+        "name": "Test subject 42",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-20T11:53:42.518438Z",
+        "seen": true,
+        "summary": "Test summary 39",
+        "updated_at": "2026-08-20T11:53:42.530333Z",
+        "visible_entry_count": 1,
+        "topic_id": 100108
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-20T10:35:08Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100111",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FF8A71",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test25@example.com",
+            "id": 100109,
+            "initials": "TC",
+            "name": "Test contact 20",
+            "updated_at": "2026-07-28T10:45:08Z"
+          }
+        ],
+        "created_at": "2026-08-20T10:35:09.178917Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FF8A71",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test25@example.com",
+          "id": 100109,
+          "initials": "TC",
+          "name": "Test contact 20",
+          "updated_at": "2026-07-28T10:45:08Z"
+        },
+        "entry_kind": "message",
+        "id": 100112,
+        "kind": "topic",
+        "name": "Test subject 43",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-20T10:53:47.521093Z",
+        "seen": true,
+        "summary": "Test summary 40",
+        "updated_at": "2026-08-20T10:53:47.528895Z",
+        "visible_entry_count": 1,
+        "topic_id": 100111
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-18T10:43:42Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100113",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#50E3C2",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test26@example.com",
+            "id": 100114,
+            "initials": "TC",
+            "name": "Test contact 21",
+            "updated_at": "2026-06-11T15:30:03Z"
+          }
+        ],
+        "created_at": "2026-08-14T16:00:00.254968Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#50E3C2",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test26@example.com",
+          "id": 100114,
+          "initials": "TC",
+          "name": "Test contact 21",
+          "updated_at": "2026-06-11T15:30:03Z"
+        },
+        "entry_kind": "message",
+        "id": 100115,
+        "kind": "topic",
+        "name": "Test subject 44",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-18T10:46:03.189712Z",
+        "seen": true,
+        "summary": "Test summary 41",
+        "updated_at": "2026-08-18T10:46:03.202935Z",
+        "visible_entry_count": 2,
+        "topic_id": 100113
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-17T19:25:00Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#7CE9FB",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test4@example.com",
+            "id": 100013,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2026-08-17T19:24:55Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FF7182",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test27@example.com",
+            "id": 100116,
+            "initials": "TC",
+            "name": "Test contact 22",
+            "updated_at": "2026-08-17T19:24:36Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100117",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#7CE9FB",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test4@example.com",
+            "id": 100013,
+            "initials": "TC",
+            "name": "Test contact 2",
+            "updated_at": "2026-08-17T19:24:55Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#F5A623",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test5@example.com",
+            "id": 100015,
+            "initials": "TC",
+            "name": "Test contact 3",
+            "updated_at": "2026-08-15T22:32:24Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FF7182",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test27@example.com",
+            "id": 100116,
+            "initials": "TC",
+            "name": "Test contact 22",
+            "updated_at": "2026-08-17T19:24:36Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#7ED321",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test28@example.com",
+            "id": 100118,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2026-08-17T19:25:01Z"
+          }
+        ],
+        "created_at": "2026-08-17T19:14:46.9646Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#7ED321",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test28@example.com",
+          "id": 100118,
+          "initials": "TC",
+          "name": "Test contact 1",
+          "updated_at": "2026-08-17T19:25:01Z"
+        },
+        "entry_kind": "message",
+        "id": 100119,
+        "kind": "topic",
+        "name": "Test subject 45",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-17T19:25:07.195771Z",
+        "seen": true,
+        "summary": "Test summary 42",
+        "updated_at": "2026-08-17T19:25:07.207639Z",
+        "visible_entry_count": 3,
+        "topic_id": 100117
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-17T14:06:21Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100120",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FFCC00",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test29@example.com",
+            "id": 100121,
+            "initials": "TC",
+            "name": "Test contact 23",
+            "updated_at": "2026-08-17T14:21:13Z"
+          }
+        ],
+        "created_at": "2026-08-17T14:21:13.719467Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FFCC00",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test29@example.com",
+          "id": 100121,
+          "initials": "TC",
+          "name": "Test contact 23",
+          "updated_at": "2026-08-17T14:21:13Z"
+        },
+        "entry_kind": "message",
+        "id": 100122,
+        "kind": "topic",
+        "name": "Test subject 46",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-17T14:21:17.2141Z",
+        "seen": true,
+        "summary": "Test summary 43",
+        "updated_at": "2026-08-17T14:21:17.221032Z",
+        "visible_entry_count": 1,
+        "topic_id": 100120
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-17T14:19:58Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#06D004",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test3@example.com",
+            "id": 100009,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2023-11-27T07:40:48Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100123",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#FFCC00",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Service",
+            "email_address": "test16@example.com",
+            "id": 100051,
+            "initials": "TC",
+            "name": "Test contact 13",
+            "updated_at": "2026-07-29T10:14:17Z"
+          }
+        ],
+        "created_at": "2026-08-17T14:19:59.494858Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#FFCC00",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Service",
+          "email_address": "test16@example.com",
+          "id": 100051,
+          "initials": "TC",
+          "name": "Test contact 13",
+          "updated_at": "2026-07-29T10:14:17Z"
+        },
+        "entry_kind": "message",
+        "id": 100124,
+        "kind": "topic",
+        "name": "Test subject 47",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-17T14:20:16.349922Z",
+        "seen": true,
+        "summary": "Test summary 44",
+        "updated_at": "2026-08-17T14:20:16.362021Z",
+        "visible_entry_count": 1,
+        "topic_id": 100123
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-12T10:10:34Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100125",
+        "blocked_trackers": true,
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test30@example.com",
+            "id": 100126,
+            "initials": "TC",
+            "name": "Test contact 24",
+            "updated_at": "2026-08-05T13:00:47Z"
+          }
+        ],
+        "created_at": "2026-08-12T10:10:35.538556Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#BCFF94",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test30@example.com",
+          "id": 100126,
+          "initials": "TC",
+          "name": "Test contact 24",
+          "updated_at": "2026-08-05T13:00:47Z"
+        },
+        "entry_kind": "message",
+        "id": 100127,
+        "kind": "topic",
+        "name": "Test subject 48",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-17T09:50:47.624034Z",
+        "seen": true,
+        "summary": "Test summary 45",
+        "updated_at": "2026-08-17T09:50:47.645079Z",
+        "visible_entry_count": 1,
+        "topic_id": 100125
+      },
+      {
+        "account_id": 100003,
+        "active_at": "2026-08-14T16:46:06Z",
+        "addressed_contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          }
+        ],
+        "alternative_sender_name": "Test sender",
+        "app_url": "https://app.hey.com/topics/100128",
+        "box_id": 100001,
+        "bubble_up_schedule": {},
+        "contacts": [
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#BCFF94",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "User",
+            "email_address": "test1@example.com",
+            "id": 100004,
+            "initials": "TC",
+            "name": "Test contact 1",
+            "updated_at": "2024-01-12T23:38:30Z"
+          },
+          {
+            "account_id": 100003,
+            "avatar_background_color": "#49FFED",
+            "avatar_url": "https://example.com/avatar.png",
+            "contactable_type": "Person",
+            "email_address": "test31@example.com",
+            "id": 100129,
+            "initials": "TC",
+            "name": "Test contact 25",
+            "updated_at": "2026-04-30T11:51:56Z"
+          }
+        ],
+        "created_at": "2026-08-14T16:46:06.974707Z",
+        "creator": {
+          "account_id": 100003,
+          "avatar_background_color": "#49FFED",
+          "avatar_url": "https://example.com/avatar.png",
+          "contactable_type": "Person",
+          "email_address": "test31@example.com",
+          "id": 100129,
+          "initials": "TC",
+          "name": "Test contact 25",
+          "updated_at": "2026-04-30T11:51:56Z"
+        },
+        "entry_kind": "message",
+        "id": 100130,
+        "kind": "topic",
+        "name": "Test subject 49",
+        "note": {
+          "id": 0
+        },
+        "observed_at": "2026-08-17T09:50:44.322237Z",
+        "seen": true,
+        "summary": "Test summary 46",
+        "updated_at": "2026-08-17T09:50:44.336427Z",
+        "visible_entry_count": 1,
+        "topic_id": 100128
+      }
+    ],
+    "next_page": "eyJwYWdlX251bWJlciI6NCwidmFsdWVzIjp7InNlZW4iOiJzZWVuIiwib2JzZXJ2ZWRfYXQiOiIyMDI2LTAxLTAxVDAwOjAwOjAwLjAwMDAwMFoiLCJpZCI6MTAwMTMwfX0"
+  },
+  "summary": "50 threads in Imbox",
+  "notice": "Showing 50 results. More available; use --all to fetch all.",
+  "breadcrumbs": [
+    {
+      "action": "read",
+      "command": "hey thread read <thread-id>",
+      "description": "Read an email thread"
+    },
+    {
+      "action": "bundle",
+      "command": "hey bundle view <box-item-id>",
+      "description": "List the unseen threads a bundle row groups"
+    },
+    {
+      "action": "move",
+      "command": "hey move <box-item-id> --to <box>",
+      "description": "Move an email thread to another box"
+    },
+    {
+      "action": "compose",
+      "command": "hey compose --to <email> --subject <subject>",
+      "description": "Compose a new message"
+    }
+  ]
+}

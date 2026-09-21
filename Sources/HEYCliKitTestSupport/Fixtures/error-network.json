@@ -1,0 +1,5 @@
+{
+  "ok": false,
+  "error": "Get \"https://app.hey.com/imbox.json\": dial tcp: lookup app.hey.com: no such host",
+  "code": "api"
+}

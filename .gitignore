@@ -1,0 +1,16 @@
+## Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+## Xcode
+xcuserdata/
+DerivedData/
+*.xcodeproj
+*.xcworkspace
+
+## macOS
+.DS_Store
+
+## Unscrubbed CLI captures never leave this machine
+Sources/HEYCliKitTestSupport/Fixtures/**/*-private*

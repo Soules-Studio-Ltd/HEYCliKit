@@ -1,0 +1,27 @@
+{
+  "note": "Same command, hey account list --json. First run with cwd inside a folder holding .hey/config.json with account_id not-the-real-one, second run with cwd at HOME.",
+  "from_project_dir_with_local_config": {
+    "ok": false,
+    "error": "account must be a positive ID or \"all\" (got \"not-the-real-one\")",
+    "code": "usage"
+  },
+  "from_home": {
+    "ok": true,
+    "data": [
+      {
+        "id": "all",
+        "name": "All Accounts",
+        "active": true
+      },
+      {
+        "id": "123456",
+        "name": "Test contact 1",
+        "email": "test1@example.com",
+        "purpose": "home",
+        "status": "active",
+        "active": false
+      }
+    ],
+    "summary": "2 mail account filters"
+  }
+}

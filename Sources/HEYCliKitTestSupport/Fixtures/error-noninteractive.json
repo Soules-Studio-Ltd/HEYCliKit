@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "error": "Not logged in",
+  "code": "auth",
+  "hint": "Run: hey auth login"
+}

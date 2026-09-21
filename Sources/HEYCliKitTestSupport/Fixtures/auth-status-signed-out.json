@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "data": {
+    "account_source": "default",
+    "authenticated": false,
+    "base_url": "https://app.hey.com",
+    "install_id": "00000000-0000-0000-0000-000000000000",
+    "mail_account": "all"
+  },
+  "summary": "Not logged in",
+  "breadcrumbs": [
+    {
+      "action": "login",
+      "command": "hey auth login",
+      "description": "Authenticate with HEY"
+    }
+  ]
+}

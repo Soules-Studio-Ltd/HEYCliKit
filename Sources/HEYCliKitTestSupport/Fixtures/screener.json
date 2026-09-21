@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "id": 100001,
+      "name": "Test contact 1",
+      "email_address": "test1@example.com",
+      "subject": "Test 5",
+      "summary": "Test 5",
+      "topic_id": 100002
+    }
+  ],
+  "summary": "1 sender waiting",
+  "breadcrumbs": [
+    {
+      "action": "approve",
+      "command": "hey screener approve <id>",
+      "description": "Let a sender through"
+    },
+    {
+      "action": "deny",
+      "command": "hey screener deny <id>",
+      "description": "Turn a sender away"
+    }
+  ],
+  "meta": {
+    "pages_fetched": 1,
+    "total_count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "data": {
+    "account_source": "default",
+    "auth_type": "oauth",
+    "authenticated": true,
+    "base_url": "https://app.hey.com",
+    "expired": false,
+    "expires_at": "2026-01-01T00:00:00Z",
+    "install_id": "00000000-0000-0000-0000-000000000000",
+    "mail_account": "all",
+    "refresh_available": true,
+    "storage": "keyring"
+  },
+  "summary": "Logged in"
+}

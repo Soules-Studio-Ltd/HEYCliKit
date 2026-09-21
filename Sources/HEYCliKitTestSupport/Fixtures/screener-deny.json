@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "id": 100001,
+      "status": "denied",
+      "name": "Test contact 1",
+      "email_address": "test1@example.com"
+    }
+  ],
+  "summary": "1 sender denied",
+  "breadcrumbs": [
+    {
+      "action": "approve",
+      "command": "hey screener approve 100001",
+      "description": "Let this sender through after all"
+    }
+  ]
+}
