@@ -307,8 +307,8 @@ public final class HEYFixtureClient: Sendable {
         /// A login scripted as envelope bytes is mapped exactly as the live client
         /// maps a child's ending: stdout is ignored, exit 0 is a completed sign in
         /// and anything else is one that was not completed, carrying the scripted
-        /// stderr. So no scripting call can fail a consumer's test for a reason the
-        /// CLI would not have.
+        /// stderr and the kind the package classifies from it. So no scripting call
+        /// can fail a consumer's test for a reason the CLI would not have.
         ///
         /// A held login holds the start of the sign in and never its outcome, so
         /// ``HEYClient/login()`` returns late and the handle it hands back answers
@@ -700,8 +700,31 @@ public final class HEYFixtureClient: Sendable {
         answers.enqueue(.login(outcome), for: .login)
     }
 
+    /// Scripts the next login so its handle resolves at once as a sign in that
+    /// was not completed, with the given kind.
+    ///
+    /// Each kind gets an ending the CLI could have come to, and the package
+    /// classifies it by the same rule it applies to a real child:
+    ///
+    /// - ``LoginFailure/Kind/timedOut``, ``LoginFailure/Kind/accessDenied`` and
+    ///   ``LoginFailure/Kind/notClassified`` exit 3 with stderr shaped like the
+    ///   CLI's, its progress lines and then the failed envelope, with the sign in
+    ///   address left out so no test ever carries an install id. The one not
+    ///   classified carries `OAuth error: server_error`, an error HEY's page can
+    ///   report that the package has no name for.
+    /// - ``LoginFailure/Kind/cancelled`` ends by SIGTERM with no stderr, as the
+    ///   CLI does once it is asked to stop. It resolves at once, which a real
+    ///   cancel cannot: the realistic one is a login scripted with
+    ///   ``scriptLoginWaitingForCancel()`` that the app cancels itself.
+    ///
+    /// Use ``script(login:)`` for an ending of your own.
+    public func script(loginNotCompleted kind: LoginFailure.Kind) {
+        answers.enqueue(.login(.notCompletedLogin(kind)), for: .login)
+    }
+
     /// Scripts the next login so its handle stays pending until the app cancels it,
-    /// and then resolves as not completed by SIGTERM, the way the CLI does.
+    /// and then resolves as not completed by SIGTERM, the way the CLI does, with
+    /// the kind ``LoginFailure/Kind/cancelled``.
     ///
     /// This is the sign in nobody finished: the CLI waits for a browser that never
     /// comes back, with no timeout of its own (ADR 0002), until the app stops it.
@@ -930,9 +953,9 @@ private final class HeldLatch: Sendable {
 ///
 /// A login scripted with an outcome is resolved from the start, so awaiting it
 /// returns at once. One scripted as waiting is resolved by ``cancel()`` alone,
-/// as not completed by SIGTERM, and every cancel after that is a no op. The
-/// outcome is safe to await from as many places as a test likes, which is why
-/// every waiter is remembered rather than one.
+/// as a cancelled sign in ended by SIGTERM, and every cancel after that is a no
+/// op. The outcome is safe to await from as many places as a test likes, which is
+/// why every waiter is remembered rather than one.
 private final class ScriptedLogin: Sendable {
     private struct State {
         var outcome: LoginOutcome?
@@ -950,9 +973,7 @@ private final class ScriptedLogin: Sendable {
     }
 
     private func cancel() {
-        resolve(
-            .notCompleted(LoginFailure(exitStatus: .signaled(SIGTERM), standardError: ""))
-        )
+        resolve(.cancelledLogin)
     }
 
     /// The outcome, with the cancellation the live handle has: a task that awaits
@@ -994,5 +1015,71 @@ private final class ScriptedLogin: Sendable {
         for continuation in waiting {
             continuation.resume(returning: outcome)
         }
+    }
+}
+
+extension LoginOutcome {
+    /// A sign in the app stopped, ended by SIGTERM with no stderr, which is what
+    /// the CLI does once it is asked to stop.
+    ///
+    /// It goes through the package's own mapping with the cancel passed in, so it
+    /// is classified exactly as the live client classifies a cancelled child.
+    fileprivate static let cancelledLogin = LoginOutcome(
+        exitStatus: .signaled(SIGTERM),
+        standardError: Data(),
+        cancelWasRequested: true
+    )
+
+    /// A representative sign in that was not completed with this kind, mapped
+    /// from its ending by the package's own rule.
+    fileprivate static func notCompletedLogin(_ kind: LoginFailure.Kind) -> LoginOutcome {
+        switch kind {
+        case .timedOut:
+            LoginOutcome(
+                exitStatus: .exited(3),
+                standardError: failedSignInStandardError(error: "authentication timeout")
+            )
+        case .accessDenied:
+            LoginOutcome(
+                exitStatus: .exited(3),
+                standardError: failedSignInStandardError(error: "OAuth error: access_denied")
+            )
+        case .cancelled:
+            cancelledLogin
+        case .notClassified:
+            LoginOutcome(
+                exitStatus: .exited(3),
+                standardError: failedSignInStandardError(error: "OAuth error: server_error")
+            )
+        }
+    }
+
+    /// The stderr the CLI writes for a sign in that failed with this error: its
+    /// progress lines, then the failed envelope it exits 3 with.
+    ///
+    /// The line the CLI prints between the two, naming the sign in address, is
+    /// left out, since the real one carries the machine's install id and a
+    /// scripted ending has no business carrying even a made up one.
+    ///
+    /// The package's own tests build the same text, address line included, in
+    /// their `signInStandardError(failingWith:)`. The copies are separate because
+    /// they live in different products, and this one ships to apps, so it must not
+    /// export a helper for the package's tests to share.
+    private static func failedSignInStandardError(error: String) -> Data {
+        Data(
+            """
+
+            Opening browser for authentication...
+
+            Waiting for authentication...
+            {
+              "ok": false,
+              "error": "login failed: \(error)",
+              "code": "auth",
+              "hint": "Run: hey auth login"
+            }
+
+            """.utf8
+        )
     }
 }

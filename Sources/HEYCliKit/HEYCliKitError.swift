@@ -27,7 +27,13 @@ public struct CLIErrorDetails: Sendable, Hashable {
 
 /// What the CLI printed when it could not be decoded as an envelope.
 public struct DecodingFailure: Sendable, Hashable {
-    /// A description of the underlying decoding error.
+    /// What could not be decoded and where, in the package's own words.
+    ///
+    /// It names keys, positions and schema tokens such as the type that was
+    /// expected, and never a value the CLI printed, so an app may log it verbatim
+    /// without writing anything out of the mailbox to disk. The CLI's own text
+    /// lives in ``rawText`` alone, which is where an app looks when it needs it and
+    /// which it treats as the mailbox content it is.
     public let description: String
     /// The CLI's stdout as text, decoded leniently.
     public let rawText: String

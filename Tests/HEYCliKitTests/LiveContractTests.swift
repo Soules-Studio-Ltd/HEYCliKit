@@ -119,7 +119,7 @@ struct LiveContractTests {
             // the maintainer's account is theirs, and only the shape is the package's.
             #expect(posting.appURL.host() == "app.hey.com")
             if case let .bundle(bundle) = posting {
-                #expect(bundle.bundleAppURL.host() == "app.hey.com")
+                #expect(bundle.bundleAppURL?.host() == "app.hey.com")
             }
         }
         // HEY prints a cursor only on a paging boundary, so a page short of the size

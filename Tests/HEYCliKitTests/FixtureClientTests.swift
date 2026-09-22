@@ -68,6 +68,24 @@ struct FixtureClientTests {
         #expect(await invocations.next() == .boxPage(kind: .imbox, pageSize: pageSize, cursor: nil))
     }
 
+    @Test("A scripted page with a refused row answers with the rest of the page and the count")
+    func scriptedBoxPageCountsARefusedRow() async throws {
+        let fixtureClient = HEYFixtureClient()
+        fixtureClient.script(
+            .boxPage,
+            standardOutput: try FixtureJSON.removing(
+                "app_url",
+                at: .firstSinglePosting,
+                from: try HEYFixtures.data(named: "imbox.json")
+            )
+        )
+
+        let page = try await fixtureClient.client.boxPage(.imbox)
+
+        #expect(page.postings.count == 49)
+        #expect(page.refusedRowCount == 1)
+    }
+
     @Test("A scripted page's cursor comes back on the invocation that used it")
     func scriptedBoxPageCarriesTheCursorItWasCalledWith() async throws {
         let fixtureClient = HEYFixtureClient()
@@ -349,6 +367,38 @@ struct FixtureClientTests {
         #expect(await invocations.next() == .watch(boxKinds: NonEmptySet(.imbox), since: nil))
     }
 
+    @Test("A scripted added line whose posting is of an unknown kind replays as a change")
+    func scriptedWatchReplaysAnOtherPosting() async throws {
+        let fixtureClient = HEYFixtureClient()
+        let captured = try FixtureJSON.line(.newMailArrival, ofFixtureNamed: "watch-session.ndjson")
+        fixtureClient.script(
+            .watch,
+            standardOutput: try FixtureJSON.replacing(
+                "kind",
+                with: "parcel",
+                at: .watchLinePosting,
+                in: captured
+            )
+        )
+
+        var decoded: [WatchLine] = []
+        for try await line in try await fixtureClient.client.watch(NonEmptySet(.imbox)) {
+            decoded.append(line)
+        }
+
+        #expect(decoded.count == 1)
+        guard case let .added(change) = try #require(decoded.first) else {
+            Issue.record("The line was expected to be an added change.")
+            return
+        }
+        guard case let .other(posting) = change.posting else {
+            Issue.record("The change was expected to carry an other posting.")
+            return
+        }
+        #expect(posting.kind == "parcel")
+        #expect(posting.id == Posting.ID(100_002))
+    }
+
     @Test("A watch scripted with an error envelope at exit 3 ends signed out")
     func scriptedWatchErrorEndsSignedOut() async throws {
         let fixtureClient = HEYFixtureClient()
@@ -437,6 +487,65 @@ struct FixtureClientTests {
         let handle = try await fixtureClient.client.login()
 
         #expect(await handle.outcome == outcome)
+    }
+
+    @Test(
+        "A login scripted as not completed resolves at once with that kind",
+        arguments: LoginFailure.Kind.allCases
+    )
+    func scriptedLoginNotCompletedCarriesItsKind(kind: LoginFailure.Kind) async throws {
+        let fixtureClient = HEYFixtureClient()
+        fixtureClient.script(loginNotCompleted: kind)
+
+        let handle = try await fixtureClient.client.login()
+
+        guard case let .notCompleted(failure) = await handle.outcome else {
+            Issue.record("A login scripted as not completed was reported completed")
+            return
+        }
+        #expect(failure.kind == kind)
+        #expect(fixtureClient.recordedInvocations == [.login])
+        // The ending is one the CLI could have come to, never the sign in address
+        // it prints on the way: a consumer's test must not ship an install id.
+        #expect(failure.standardError.contains("install_id") == false)
+        #expect(failure.standardError.contains("https://") == false)
+
+        switch kind {
+        case .timedOut, .accessDenied, .notClassified:
+            // Shaped as the CLI shapes it and classified by the package's own rule,
+            // so the same ending built from its bytes alone reads the same kind. The
+            // one not classified is the CLI's own failed envelope around an error
+            // the package has no name for, not an ending made up for the fixture.
+            #expect(failure.exitStatus == .exited(3))
+            #expect(failure.standardError.contains(#""code": "auth""#))
+            #expect(
+                LoginFailure(exitStatus: failure.exitStatus, standardError: failure.standardError)
+                    .kind == kind
+            )
+        case .cancelled:
+            #expect(failure == terminatedLogin)
+        }
+    }
+
+    @Test("A login scripted as envelope bytes is classified the way the live client classifies it")
+    func scriptedLoginBytesAreClassified() async throws {
+        let fixtureClient = HEYFixtureClient()
+        // The failed envelope goes to stderr, after the progress lines, and stdout
+        // carries nothing, which is how the CLI ends a sign in that timed out.
+        fixtureClient.script(
+            .login,
+            standardOutput: Data(),
+            exitCode: 3,
+            standardError: signInStandardError(failingWith: "authentication timeout")
+        )
+
+        let handle = try await fixtureClient.client.login()
+
+        guard case let .notCompleted(failure) = await handle.outcome else {
+            Issue.record("A login scripted to exit 3 was reported completed")
+            return
+        }
+        #expect(failure.kind == .timedOut)
     }
 
     @Test("A login nobody scripted fails at the call and names the login operation")
@@ -869,7 +978,11 @@ private func readWatch(on client: HEYClient) async -> WatchReading {
 private let anEntryID = ScreenerEntry.ID(100_001)
 
 /// A sign in the app stopped, as the handle reports it.
-private let terminatedLogin = LoginFailure(exitStatus: .signaled(SIGTERM), standardError: "")
+private let terminatedLogin = LoginFailure(
+    exitStatus: .signaled(SIGTERM),
+    standardError: "",
+    kind: .cancelled
+)
 
 /// What the CLI prints on stderr while it waits for the browser.
 private let loginProgress = "Waiting for authentication...\n"

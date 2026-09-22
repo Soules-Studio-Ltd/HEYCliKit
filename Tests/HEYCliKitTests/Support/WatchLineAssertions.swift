@@ -67,9 +67,12 @@ extension WatchLine {
 
 /// Compares the time a watch line carries to the text the CLI printed on it.
 ///
-/// The CLI prints three fractional digits, and the nearest double to those digits
-/// is not always the one a formatter in a test lands on, so the comparison is to
-/// the microsecond rather than exact, exactly as a box page's timestamps are read.
+/// It applies to the three digit lines the watch fixtures carry and to nothing
+/// finer: the formatter it reads the expected text with keeps three fractional
+/// digits, so a line with more is compared with
+/// `expect(_:isWithinAMicrosecondOf:)` against a literal instead. The nearest
+/// double to those three digits is not always the one the formatter lands on, so
+/// the comparison is to the microsecond rather than exact.
 func expect(
     _ line: WatchLine?,
     isAt text: String,

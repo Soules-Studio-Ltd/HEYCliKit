@@ -88,7 +88,7 @@ private func decodeSuccessEnvelope<Payload: Decodable>(
         case 0:
             throw HEYCliKitError.decodingFailure(
                 DecodingFailure(
-                    description: String(describing: error),
+                    description: describeDecodingError(error),
                     rawText: String(decoding: standardOutput, as: UTF8.self)
                 )
             )

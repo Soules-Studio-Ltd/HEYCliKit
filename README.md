@@ -10,7 +10,7 @@ This repository holds only the Swift package: the code that runs the `hey` execu
 
 ## Status
 
-Early development. The current version is 0.5.0. The API is not stable yet, so pin an exact version and expect breaking changes until 1.0. An exact pin rather than a range, because a `from:` requirement spans everything below the next major, which while the package is at 0.x means every future minor, and a 0.x minor is allowed to break source.
+Early development. The current version is 0.6.0. The API is not stable yet, so pin an exact version and expect breaking changes until 1.0. An exact pin rather than a range, because a `from:` requirement spans everything below the next major, which while the package is at 0.x means every future minor, and a 0.x minor is allowed to break source.
 
 ## Requirements
 
@@ -23,7 +23,7 @@ Early development. The current version is 0.5.0. The API is not stable yet, so p
 Add the package to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/Soules-Studio-Ltd/HEYCliKit", exact: "0.5.0")
+.package(url: "https://github.com/Soules-Studio-Ltd/HEYCliKit", exact: "0.6.0")
 ```
 
 Then depend on the `HEYCliKit` product from your target. In Xcode, use File, Add Package Dependencies with the same URL.

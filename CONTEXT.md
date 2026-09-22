@@ -5,7 +5,7 @@ The language shared by HEYCliKit and the apps built on it. HEYCliKit wraps the o
 ## Language
 
 **Posting**:
-A row in a box. It stands for one topic or for a bundle of them.
+A row in a box. It stands for one topic, for a bundle of them, or for a kind the package does not model.
 _Avoid_: Thread, box item, message, email
 
 **Topic**:
@@ -19,6 +19,10 @@ _Avoid_: Topic posting, thread row
 **Bundle**:
 A posting that groups several topics from one contact into one row.
 _Avoid_: Bundle posting, group
+
+**Other posting**:
+A posting of a kind the package does not model, `entry` included. It carries the fields every posting shares and the CLI's `kind` as it printed it, which is empty when the CLI printed none, so the app decides whether and how to draw it.
+_Avoid_: Unknown posting, unsupported posting, skipped row
 
 **Subject**:
 What a posting is about: the subject line of its topic, or the bundle's title. The CLI calls it `name`, and the API exposes it as `subject`.
@@ -69,6 +73,10 @@ _Avoid_: Response, payload, result
 **Page**:
 The postings one box read returns, together with a cursor when more follow.
 _Avoid_: Batch, chunk, result set
+
+**Refused row**:
+A row the CLI printed on a page that the package could not read at all: no `id`, `app_url`, `active_at`, `observed_at` or `creator`, an id that is not an integer, or a row that is not an object. It is dropped from the page and counted, never a failure of the page around it, so the postings plus the refused rows are the rows the CLI printed. A watch line holding such a posting is an unrecognised line instead.
+_Avoid_: Skipped row, invalid posting, dropped posting
 
 **Page size**:
 How many postings a page holds. HEY serves 30 first and 10 at a time after that, so a page size is 30 or a larger multiple of 10; any other number returns rows with no cursor.
@@ -169,6 +177,10 @@ _Avoid_: Auth, authenticate
 **Login handle**:
 What a started login leaves the app holding: how the sign in ended, and a way to stop it. It never times out.
 _Avoid_: Login session, login task, auth handle
+
+**Login failure kind**:
+Why a login was not completed, as the package classifies it from the CLI's exit and the error in the envelope it prints on stderr: timed out, access denied, cancelled by the app, or not classified. Only the kind is safe to send off the machine, in a usage event for instance. The stderr beside it carries the sign in address with the machine's install id, so it stays in local logs.
+_Avoid_: Login error, failure reason, auth error code
 
 **Logout**:
 The act, started only by the app, of signing the CLI out, moving it from signed in to signed out.

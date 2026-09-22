@@ -116,6 +116,53 @@ struct WatchTests {
         #expect(bundleWithTopic.postingID == Posting.ID(100_020))
     }
 
+    @Test(
+        "A change line whose posting has no addressed contacts is a change and not an unrecognised line",
+        arguments: ["added", "updated"]
+    )
+    func changeLineWithoutAddressedContactsIsAChange(change: String) async throws {
+        // The captured arrival of a new mail, with the key the CLI drops from a
+        // Bcc only or undisclosed recipients mail taken out of its posting. Any
+        // decoding failure inside a line makes the whole line unrecognised, so
+        // before this the app was told nothing at all about such a mail.
+        let captured = try FixtureJSON.line(.newMailArrival, ofFixtureNamed: "watch-session.ndjson")
+        let derived = try FixtureJSON.replacing(
+            "change",
+            with: change,
+            at: .watchLine,
+            in: try FixtureJSON.removing(
+                "addressed_contacts",
+                at: .watchLinePosting,
+                from: captured
+            )
+        )
+
+        let watch = try await startWatch()
+        watch.process.emit(String(decoding: derived, as: UTF8.self))
+        // The child ends before anything reads the stream, so a line the package
+        // cannot read fails the test rather than leaving it waiting for another.
+        watch.process.end(.exited(0))
+
+        var decoded: [WatchLine] = []
+        for try await line in watch.lines {
+            decoded.append(line)
+        }
+
+        #expect(decoded.count == 1)
+        let line = try #require(decoded.first)
+        #expect(line.kind == (change == "added" ? .added : .updated))
+        let changed = try #require(line.change)
+        guard case let .single(posting) = changed.posting else {
+            Issue.record("The line was expected to carry a single posting.")
+            return
+        }
+
+        #expect(posting.addressedContacts.isEmpty)
+        // The CLI prints no topic id on a posting inside a watch line, so the
+        // line's own thread_id is what names the topic on both kinds of change.
+        #expect(posting.topicID == TopicID(100_003))
+    }
+
     @Test("A captured bundle growth decodes its replayed lines and then its live ones")
     func watchBundleGrowthDecodesLineByLine() async throws {
         let decoded = try await replay("watch-bundle-growth.ndjson")
@@ -341,19 +388,61 @@ struct WatchTests {
         #expect(decoded[1].kind == .ready)
     }
 
-    @Test("A change carrying a posting the package cannot read arrives as an unrecognised line")
-    func aPostingOfAnUnknownKindIsAnUnrecognizedLine() async throws {
-        // A restarted watch would ask for this same line again with --since, so a
+    @Test(
+        "A change line whose posting is of a kind the package does not model is a change carrying an other posting",
+        arguments: ["added", "updated"]
+    )
+    func changeLineOfAnUnknownKindIsAChange(change: String) async throws {
+        // The captured arrival of a new mail, with its posting's kind swapped for
+        // one nobody has declared. The same decode runs inside a line as on a
+        // page, so before this an unknown kind made the whole line unrecognised
+        // and the app was told nothing about the mail.
+        let captured = try FixtureJSON.line(.newMailArrival, ofFixtureNamed: "watch-session.ndjson")
+        let derived = try FixtureJSON.replacing(
+            "change",
+            with: change,
+            at: .watchLine,
+            in: try FixtureJSON.replacing("kind", with: "parcel", at: .watchLinePosting, in: captured)
+        )
+
+        let watch = try await startWatch()
+        watch.process.emit(String(decoding: derived, as: UTF8.self))
+        watch.process.end(.exited(0))
+
+        var decoded: [WatchLine] = []
+        for try await line in watch.lines {
+            decoded.append(line)
+        }
+
+        #expect(decoded.count == 1)
+        let line = try #require(decoded.first)
+        #expect(line.kind == (change == "added" ? .added : .updated))
+        let changed = try #require(line.change)
+        guard case let .other(posting) = changed.posting else {
+            Issue.record("The line was expected to carry an other posting.")
+            return
+        }
+
+        #expect(posting.kind == "parcel")
+        #expect(posting.id == Posting.ID(100_002))
+        #expect(posting.subject == "Test subject 1")
+        #expect(changed.topicID == TopicID(100_003))
+    }
+
+    @Test("A change whose posting's shared fields fail arrives as an unrecognised line")
+    func aPostingWhoseSharedFieldsFailIsAnUnrecognizedLine() async throws {
+        // A line holds one posting, so there is nothing to count a refused one
+        // against as a page does, and the line is unrecognised instead. A
+        // restarted watch would ask for this same line again with --since, so a
         // line that ended the stream would end every watch after it too.
-        let calendarLine = """
-            {"change":"added","at":"2026-09-03T20:56:00.100Z",\
-            "box":{"id":100001,"kind":"imbox","name":"Imbox"},\
-            "posting_id":100002,"thread_id":100003,"new":true,\
-            "posting":{"id":100002,"kind":"calendar","name":"Test subject 1"}}
-            """
+        let captured = try FixtureJSON.line(.newMailArrival, ofFixtureNamed: "watch-session.ndjson")
+        let derived = String(
+            decoding: try FixtureJSON.removing("app_url", at: .watchLinePosting, from: captured),
+            as: UTF8.self
+        )
         let watch = try await startWatch()
         watch.process.emit(#"{"change":"ready","at":"2026-09-03T20:55:14.906Z"}"#)
-        watch.process.emit(calendarLine)
+        watch.process.emit(derived)
         watch.process.emit(#"{"change":"ready","at":"2026-09-03T20:59:00.400Z"}"#)
         watch.process.end(.exited(0))
 
@@ -363,7 +452,7 @@ struct WatchTests {
         }
 
         #expect(decoded.count == 3)
-        #expect(decoded[1] == .unrecognized(rawText: calendarLine))
+        #expect(decoded[1] == .unrecognized(rawText: derived))
         #expect(decoded[2].kind == .ready)
     }
 

@@ -196,10 +196,46 @@ struct PublicSurfaceTests {
         #expect(
             await cancelled.outcome
                 == .notCompleted(
-                    LoginFailure(exitStatus: .signaled(SIGTERM), standardError: "")
+                    LoginFailure(
+                        exitStatus: .signaled(SIGTERM),
+                        standardError: "",
+                        kind: .cancelled
+                    )
                 )
         )
         #expect(fixtureClient.recordedInvocations == [.login, .login])
+    }
+
+    @Test("Why a sign in was not completed is read and scripted through the public API alone")
+    func loginFailureKindIsPublic() async throws {
+        let fixtureClient = HEYFixtureClient()
+        for kind in LoginFailure.Kind.allCases {
+            fixtureClient.script(loginNotCompleted: kind)
+        }
+
+        var kinds: [String] = []
+        for _ in LoginFailure.Kind.allCases {
+            guard case let .notCompleted(failure) = try await fixtureClient.client.login().outcome
+            else { continue }
+            // The switch has no default on purpose: it is the check that these four
+            // are every case an app has to name.
+            switch failure.kind {
+            case .timedOut: kinds.append("timed out")
+            case .accessDenied: kinds.append("access denied")
+            case .cancelled: kinds.append("cancelled")
+            case .notClassified: kinds.append("not classified")
+            }
+        }
+
+        let stated = LoginFailure(exitStatus: .exited(3), standardError: "", kind: .accessDenied)
+        let hashed: Set<LoginFailure.Kind> = [stated.kind, .timedOut]
+
+        // The description is public too, so an app can log a failure as it is.
+        let described: any CustomStringConvertible = stated
+
+        #expect(kinds == ["timed out", "access denied", "cancelled", "not classified"])
+        #expect(hashed == [.accessDenied, .timedOut])
+        #expect(described.description == "The sign in was declined (exit code 3).")
     }
 
     @Test("A sign in is cancelled and a held answer released by methods, not stored closures")
@@ -226,7 +262,7 @@ struct PublicSurfaceTests {
         handle.cancel()
 
         let terminated = LoginOutcome.notCompleted(
-            LoginFailure(exitStatus: .signaled(SIGTERM), standardError: "")
+            LoginFailure(exitStatus: .signaled(SIGTERM), standardError: "", kind: .cancelled)
         )
         #expect(await first.value == terminated)
         #expect(await second.value == terminated)
@@ -248,7 +284,7 @@ struct PublicSurfaceTests {
         awaiting.cancel()
 
         let terminated = LoginOutcome.notCompleted(
-            LoginFailure(exitStatus: .signaled(SIGTERM), standardError: "")
+            LoginFailure(exitStatus: .signaled(SIGTERM), standardError: "", kind: .cancelled)
         )
         #expect(await awaiting.value == terminated)
         #expect(await handle.outcome == terminated)

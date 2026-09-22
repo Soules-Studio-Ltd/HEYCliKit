@@ -15,17 +15,26 @@ public struct Contact: Sendable, Hashable, Identifiable {
         }
     }
 
+    /// The contact's own identity, which is the one key with no honest default:
+    /// a contact with no id is not a contact, so a posting carrying one is
+    /// refused rather than read.
     public let id: ID
-    /// The contact's display name.
+    /// The contact's display name. The CLI leaves the key out when it is empty,
+    /// so a contact HEY knows only by address reads as an empty name.
     public let name: String
-    /// The contact's email address.
+    /// The contact's email address. The CLI leaves the key out when it is empty,
+    /// so an absent address reads as an empty string.
     public let emailAddress: String
-    /// The initials HEY shows when there is no avatar.
+    /// The initials HEY shows when there is no avatar. The CLI leaves the key
+    /// out when it is empty, which is what a name with no letters prints, so an
+    /// absent one reads as an empty string.
     public let initials: String
     /// The contact's avatar, when the CLI printed one.
     public let avatarURL: URL?
     /// The colour HEY draws behind the initials, as the hex text the CLI printed.
     /// It is carried as opaque text: the package never turns it into a colour.
+    /// The CLI leaves the key out when it is empty, so an absent one reads as an
+    /// empty string.
     public let avatarBackgroundColor: String
 
     init(
@@ -62,10 +71,14 @@ extension Contact: Decodable {
     public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = ID(try container.decode(Int.self, forKey: .id))
-        name = try container.decode(String.self, forKey: .name)
-        emailAddress = try container.decode(String.self, forKey: .emailAddress)
-        initials = try container.decode(String.self, forKey: .initials)
+        // Every one of these is text the CLI drops when it is empty, so an
+        // absent key is an empty string rather than a contact the package
+        // cannot read, and with it a whole page or watch line it sits on.
+        name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        emailAddress = try container.decodeIfPresent(String.self, forKey: .emailAddress) ?? ""
+        initials = try container.decodeIfPresent(String.self, forKey: .initials) ?? ""
         avatarURL = try container.decodeIfPresent(URL.self, forKey: .avatarURL)
-        avatarBackgroundColor = try container.decode(String.self, forKey: .avatarBackgroundColor)
+        avatarBackgroundColor =
+            try container.decodeIfPresent(String.self, forKey: .avatarBackgroundColor) ?? ""
     }
 }

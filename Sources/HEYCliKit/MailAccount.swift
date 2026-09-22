@@ -58,14 +58,11 @@ package struct MailAccountList: Decodable {
             let row = try container.decode(Row.self)
             guard row.id != AccountSelection.allArgumentValue else { continue }
 
-            func require(_ value: String?, _ field: String) throws -> String {
+            // The refusal names the field and never the account, since its id is
+            // a value the CLI printed.
+            func require(_ value: String?, or refusal: StaticString) throws -> String {
                 guard let value else {
-                    throw DecodingError.dataCorrupted(
-                        DecodingError.Context(
-                            codingPath: container.codingPath,
-                            debugDescription: "The mail account \(row.id) is missing its \(field)."
-                        )
-                    )
+                    throw SchemaRefusal(message: refusal).decodingError(at: container.codingPath)
                 }
 
                 return value
@@ -75,9 +72,12 @@ package struct MailAccountList: Decodable {
                 MailAccount(
                     id: MailAccount.ID(row.id),
                     name: row.name,
-                    emailAddress: try require(row.email, "email address"),
-                    purpose: try require(row.purpose, "purpose"),
-                    status: try require(row.status, "status")
+                    emailAddress: try require(
+                        row.email,
+                        or: "The mail account is missing its email address."
+                    ),
+                    purpose: try require(row.purpose, or: "The mail account is missing its purpose."),
+                    status: try require(row.status, or: "The mail account is missing its status.")
                 )
             )
         }

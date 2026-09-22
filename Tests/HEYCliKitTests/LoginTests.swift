@@ -79,7 +79,11 @@ struct LoginTests {
         #expect(
             await login.handle.outcome
                 == .notCompleted(
-                    LoginFailure(exitStatus: .signaled(SIGTERM), standardError: "")
+                    LoginFailure(
+                        exitStatus: .signaled(SIGTERM),
+                        standardError: "",
+                        kind: .cancelled
+                    )
                 )
         )
         #expect(login.process.terminateCallCount == 1)
@@ -100,7 +104,9 @@ struct LoginTests {
         // the cancel decides the outcome, it does not invent the child's exit.
         #expect(
             await login.handle.outcome
-                == .notCompleted(LoginFailure(exitStatus: .exited(0), standardError: ""))
+                == .notCompleted(
+                    LoginFailure(exitStatus: .exited(0), standardError: "", kind: .cancelled)
+                )
         )
         #expect(login.process.terminateCallCount == 1)
     }
@@ -130,7 +136,13 @@ struct LoginTests {
 
         #expect(
             await login.handle.outcome
-                == .notCompleted(LoginFailure(exitStatus: .exited(143), standardError: progress))
+                == .notCompleted(
+                    LoginFailure(
+                        exitStatus: .exited(143),
+                        standardError: progress,
+                        kind: .cancelled
+                    )
+                )
         )
     }
 
@@ -179,11 +191,241 @@ struct LoginTests {
         let other = await login.handle.outcome
 
         let terminated = LoginOutcome.notCompleted(
-            LoginFailure(exitStatus: .signaled(SIGTERM), standardError: "")
+            LoginFailure(exitStatus: .signaled(SIGTERM), standardError: "", kind: .cancelled)
         )
         #expect(cancelled == terminated)
         #expect(other == terminated)
         #expect(login.process.terminateCallCount >= 1)
+    }
+
+    @Test(
+        "A sign in that failed is classified from what the CLI printed on stderr",
+        arguments: [
+            ("authentication timeout", LoginFailure.Kind.timedOut),
+            ("context deadline exceeded", .timedOut),
+            ("OAuth error: access_denied", .accessDenied),
+            ("OAuth error: server_error", .notClassified),
+            ("OAuth error: invalid_request", .notClassified),
+            ("state mismatch: CSRF protection failed", .notClassified),
+            ("token exchange failed: connection refused", .notClassified),
+        ]
+    )
+    func failureIsClassifiedFromTheEnvelope(error: String, kind: LoginFailure.Kind) async throws {
+        let standardError = signInStandardError(failingWith: error)
+        let login = try await startLogin()
+
+        login.process.end(.exited(3), standardError: standardError)
+
+        // The stderr is carried whole beside the kind, address and all, since it is
+        // what an app logs locally. Only the kind is fit to leave the machine.
+        #expect(
+            await login.handle.outcome
+                == .notCompleted(
+                    LoginFailure(exitStatus: .exited(3), standardError: standardError, kind: kind)
+                )
+        )
+    }
+
+    @Test(
+        "The timeout and denied words classify nothing unless the CLI exited as signed out",
+        arguments: [
+            ProcessExitStatus.exited(1), .exited(143), .signaled(SIGKILL), .signaled(SIGTERM),
+        ],
+        ["authentication timeout", "context deadline exceeded", "OAuth error: access_denied"]
+    )
+    func classificationNeedsTheSignedOutExit(
+        exitStatus: ProcessExitStatus,
+        error: String
+    ) async throws {
+        // The CLI prints this envelope and exits 3 in one breath, so the words
+        // under any other ending are text from something else: a CLI that changed
+        // its codes, or a child that died between the two.
+        let login = try await startLogin()
+
+        login.process.end(exitStatus, standardError: signInStandardError(failingWith: error))
+
+        guard case let .notCompleted(failure) = await login.handle.outcome else {
+            Issue.record("A sign in that ended this way was reported completed")
+            return
+        }
+        #expect(failure.kind == .notClassified)
+    }
+
+    @Test("A cancel decides the kind too, even over a timeout the CLI printed on its way out")
+    func cancelBeatsATimeoutEnvelope() async throws {
+        // The app asked this sign in to stop, so the user walked away from it
+        // whatever the CLI made of the SIGTERM. Reporting the timeout it happened
+        // to print as well would count one abandoned sign in as two things.
+        let login = try await startLogin()
+        login.process.endsOnTerminate(
+            .exited(3),
+            standardError: signInStandardError(failingWith: "authentication timeout")
+        )
+
+        login.handle.cancel()
+
+        guard case let .notCompleted(failure) = await login.handle.outcome else {
+            Issue.record("A cancelled sign in was reported completed")
+            return
+        }
+        #expect(failure.kind == .cancelled)
+        #expect(failure.exitStatus == .exited(3))
+    }
+
+    @Test("A cancelled sign in the CLI never answered is classified as cancelled")
+    func cancelledSignInIsClassifiedAsCancelled() async throws {
+        let login = try await startLogin()
+
+        login.handle.cancel()
+
+        guard case let .notCompleted(failure) = await login.handle.outcome else {
+            Issue.record("A cancelled sign in was reported completed")
+            return
+        }
+        #expect(failure.kind == .cancelled)
+    }
+
+    @Test("A signed out exit with no stderr, as the output ceiling leaves one, is not classified")
+    func emptyStandardErrorIsNotClassified() async throws {
+        // A sign in stopped past the output ceiling keeps none of its stderr, so the
+        // envelope that would say why is gone, and the package does not guess.
+        let stopped = try await startLogin()
+        stopped.process.endWithStandardErrorTooLarge(.exited(3))
+        let silent = try await startLogin()
+        silent.process.end(.exited(3))
+
+        #expect(
+            await stopped.handle.outcome
+                == .notCompleted(
+                    LoginFailure(exitStatus: .exited(3), standardError: "", kind: .notClassified)
+                )
+        )
+        #expect(
+            await silent.handle.outcome
+                == .notCompleted(
+                    LoginFailure(exitStatus: .exited(3), standardError: "", kind: .notClassified)
+                )
+        )
+    }
+
+    @Test("Only the envelope's quoted error classifies, never the address or a plain log line")
+    func onlyTheQuotedErrorClassifies() {
+        // The address is the one other place text the CLI did not write itself
+        // lands on stderr, and a state that happened to carry these words must not
+        // read as the CLI's verdict. A URL cannot hold a bare quote, and the rule
+        // only matches the error as the envelope quotes it, so the address can
+        // never match whatever it carries. Plain log text cannot either.
+        let inTheAddress =
+            "If the browser doesn't open, visit: https://app.hey.com/oauth/authorizations/new"
+            + "?state=login failed: authentication timeout"
+            + "&error=login failed: OAuth error: access_denied\n"
+        // The form a real address takes, with the state percent encoded as a
+        // browser or the CLI would encode it.
+        let percentEncoded =
+            "If the browser doesn't open, visit: https://app.hey.com/oauth/authorizations/new"
+            + "?state=login%20failed%3A%20authentication%20timeout"
+            + "&error=login%20failed%3A%20OAuth%20error%3A%20access_denied\n"
+        let unquoted =
+            "login failed: authentication timeout\n"
+            + "login failed: OAuth error: access_denied\n"
+
+        for standardError in [inTheAddress, percentEncoded, unquoted] {
+            let failure = LoginFailure(exitStatus: .exited(3), standardError: standardError)
+            #expect(failure.kind == .notClassified)
+        }
+    }
+
+    @Test("An error the CLI appends text to still classifies, since the anchors leave off the closing quote")
+    func appendedTextStillClassifies() {
+        // The envelope's error is whatever the CLI wrapped, so a later build that
+        // says more after these words must not lose the kind it already had.
+        let appended = [
+            ("authentication timeout after 5m0s", LoginFailure.Kind.timedOut),
+            ("context deadline exceeded (6m0s)", .timedOut),
+            ("OAuth error: access_denied: the user declined", .accessDenied),
+        ]
+
+        for (error, kind) in appended {
+            let failure = LoginFailure(
+                exitStatus: .exited(3),
+                standardError: signInStandardError(failingWith: error)
+            )
+            #expect(failure.kind == kind, "\(error)")
+        }
+    }
+
+    @Test("A failure built from its ending alone is classified, and never as cancelled")
+    func twoArgumentInitializerClassifies() {
+        let timedOut = LoginFailure(
+            exitStatus: .exited(3),
+            standardError: signInStandardError(failingWith: "authentication timeout")
+        )
+        let denied = LoginFailure(
+            exitStatus: .exited(3),
+            standardError: signInStandardError(failingWith: "OAuth error: access_denied")
+        )
+        // The ending a cancel usually leaves, stated with no cancel behind it: only
+        // the package knows a cancel was asked for, so this is not classified.
+        let terminated = LoginFailure(exitStatus: .signaled(SIGTERM), standardError: "")
+
+        #expect(timedOut.kind == .timedOut)
+        #expect(denied.kind == .accessDenied)
+        #expect(terminated.kind == .notClassified)
+    }
+
+    @Test("A failure built with its kind keeps that kind, whatever its stderr says")
+    func kindInitializerStatesTheKind() {
+        let timeout = signInStandardError(failingWith: "authentication timeout")
+        let stated = LoginFailure(exitStatus: .exited(3), standardError: timeout, kind: .cancelled)
+
+        #expect(stated.kind == .cancelled)
+        #expect(stated.exitStatus == .exited(3))
+        #expect(stated.standardError == timeout)
+        // The kind is part of what a failure is, so two that differ only there are
+        // two different failures.
+        #expect(stated != LoginFailure(exitStatus: .exited(3), standardError: timeout))
+    }
+
+    @Test(
+        "A failure's description names its kind and its ending, and never its stderr",
+        arguments: [
+            (LoginFailure.Kind.timedOut, ProcessExitStatus.exited(3), "The sign in timed out (exit code 3)."),
+            (.accessDenied, .exited(3), "The sign in was declined (exit code 3)."),
+            (.cancelled, .signaled(SIGTERM), "The sign in was cancelled (killed by signal \(SIGTERM))."),
+            (
+                .notClassified, .exited(1),
+                "The sign in was not completed, for a reason the package has no name for (exit code 1)."
+            ),
+        ]
+    )
+    func failureDescriptionIsValueFree(
+        kind: LoginFailure.Kind,
+        exitStatus: ProcessExitStatus,
+        expected: String
+    ) {
+        // The stderr carries the sign in address with the install id in it, so an
+        // app that logs a failure or an outcome as it is must not log that. The
+        // kind is stated rather than classified so every kind is described over
+        // the same realistic stderr, address and all.
+        let failure = LoginFailure(
+            exitStatus: exitStatus,
+            standardError: signInStandardError(failingWith: "authentication timeout"),
+            kind: kind
+        )
+        let outcome = LoginOutcome.notCompleted(failure)
+
+        #expect(failure.description == expected)
+        #expect(String(describing: outcome).contains(expected))
+
+        let renderings = [
+            String(describing: failure), "\(failure)", String(reflecting: failure),
+            String(describing: outcome), "\(outcome)", String(reflecting: outcome),
+        ]
+        for rendering in renderings {
+            #expect(rendering.contains("install_id") == false, "\(rendering)")
+            #expect(rendering.contains("https://") == false, "\(rendering)")
+            #expect(rendering.contains("login failed") == false, "\(rendering)")
+        }
     }
 
     @Test(

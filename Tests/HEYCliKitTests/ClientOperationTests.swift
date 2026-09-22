@@ -182,6 +182,64 @@ struct ClientOperationTests {
         }
     }
 
+    /// Reads the captured Screener list with one key removed from its first
+    /// entry, derived here rather than committed beside the captures.
+    private func screener(withoutEntryKey key: String) async throws -> Screener {
+        let envelope = try FixtureJSON.removing(
+            key,
+            at: .firstScreenerEntry,
+            from: try HEYFixtures.data(named: "screener.json")
+        )
+        let (client, _) = makeScriptedClient(outputs: [scriptedOutput(envelope)])
+
+        return try await client.screener()
+    }
+
+    /// A key the CLI leaves out of a Screener entry when its value is empty,
+    /// which is what a waiting sender with a bare address prints.
+    enum ScreenerEntryAbsentKey: String, CaseIterable, CustomTestStringConvertible {
+        case name
+        case emailAddress = "email_address"
+        case subject
+        case summary
+        case topicID = "topic_id"
+
+        var testDescription: String { rawValue }
+
+        /// What the field reads as once the CLI has left the key out: the zero
+        /// value where the type has an honest one, and nothing where it has not.
+        var expectedValue: AnyHashable {
+            switch self {
+            case .name, .emailAddress, .subject, .summary: AnyHashable("")
+            case .topicID: AnyHashable(TopicID?.none)
+            }
+        }
+
+        func decodedValue(_ entry: ScreenerEntry) -> AnyHashable {
+            switch self {
+            case .name: AnyHashable(entry.name)
+            case .emailAddress: AnyHashable(entry.emailAddress)
+            case .subject: AnyHashable(entry.subject)
+            case .summary: AnyHashable(entry.summary)
+            case .topicID: AnyHashable(entry.topicID)
+            }
+        }
+    }
+
+    @Test(
+        "A Screener entry decodes an absent key as the CLI's zero value or no value",
+        arguments: ScreenerEntryAbsentKey.allCases
+    )
+    func screenerEntryDecodesAnAbsentKey(key: ScreenerEntryAbsentKey) async throws {
+        let screener = try await screener(withoutEntryKey: key.rawValue)
+
+        let entry = try #require(screener.entries.first)
+        #expect(key.decodedValue(entry) == key.expectedValue)
+        // A sibling the derived envelope left alone, so the test says the entry
+        // itself decoded and not merely the list around it.
+        #expect(entry.id == ScreenerEntry.ID(100_001))
+    }
+
     @Test("Approving an entry decodes the decision HEY confirmed")
     func approveDecodesItsDecision() async throws {
         let (client, _) = makeScriptedClient(
